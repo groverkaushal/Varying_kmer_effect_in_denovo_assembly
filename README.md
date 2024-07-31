@@ -78,20 +78,29 @@ The workflow consists of the following steps:
 ### Quality Assessment
 
 The first step involves evaluating the quality of the sample using FASTQC. Summary statistics obtained from FASTQC provide insights into various quality metrics, allowing us to identify any potential issues in the sequencing data.
-
-### Trimming and Quality Reads Filtering
-
 Trimmomatic tool was used to trim the low quality ends and remove the low quality reads.
+
+```
+chmod +x preprocessing.sh
+./preprocessing.sh
+```
 
 ### De-novo Whole Genome Assembly
 
 Following the quality assessment, we perform de-novo whole genome assembly using two different tools, each employing 8 distinct k-mer sizes. This approach allows for the evaluation of the assembly output, and observing the effectiveness of the k-mer sizes in reconstructing the genome. 
 The 2 tools used were Abyss and velvet, both used for genome assembly.
+```
+chmod +x abyss_velvet_denovo_assembly.sh
+./abyss_velvet_denovo_assembly.sh
+```
 
 ### Analysis and Comparison
 
 In the analysis, we compare various output features of the assembled scaffolds from each kmer length. The features compared were Total assembled Sequences, Total assembled bases, N50, N90, L50, Average assembled contig length, Minimum contig length, Max Length, No. of N nucleotides.
 Furthermore, BUSCO analysis plots were made to access the completeness of the assembled genome.
+```
+python data_analysis.py
+```
 
 ### Results
 
