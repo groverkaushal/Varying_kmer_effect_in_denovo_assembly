@@ -1,0 +1,10 @@
+	abyss_kc2	abyss_kc3	velvet
+Total sequences			
+Total bases			
+N50			
+N90			
+L50			
+Avg length			
+Min length			
+Max length			
+N's			
