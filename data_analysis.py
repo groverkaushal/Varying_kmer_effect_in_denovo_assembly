@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import numpy
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
