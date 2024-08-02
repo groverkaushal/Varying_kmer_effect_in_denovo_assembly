@@ -36,8 +36,8 @@ The workflow consists of the following steps:
 1. Create a virtual environment and install python dependincies:
 
    ```bash
-   python3 -m venv venv_name
-   source venv/bin/activate
+   conda create -n grover python=3.9
+   conda activate grover
    pip install -r requirements.txt
    ```
 
