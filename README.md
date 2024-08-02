@@ -74,6 +74,12 @@ The workflow consists of the following steps:
    cd ..
    ```
 
+6. Install Busco:
+   ```
+   conda install -c conda-forge mamba
+   mamba install -c conda-forge -c bioconda busco=5.7.1
+   ``
+
 ## Workflow
 ### Quality Assessment
 
