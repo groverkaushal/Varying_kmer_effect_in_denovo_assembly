@@ -79,6 +79,7 @@ The workflow consists of the following steps:
    conda install -c conda-forge mamba
    mamba install -c conda-forge -c bioconda busco=5.7.1
    ```
+<br></br>
 
 ## Workflow
 ### Quality Assessment
