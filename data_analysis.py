@@ -4,16 +4,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.patches as mpatches
 
+kmer_list = np.arange(39,152,8).tolist()
 
 formatt = pd.read_csv("./format.txt",sep="\t").set_index("Unnamed: 0")
 # a = formatt.copy()
 
-a = pd.concat([formatt]*8, axis=1)
-a.columns = [f'{col}_{i+1}' for i in range(8) for col in formatt.columns]
+a = pd.concat([formatt]*len(kmer_list), axis=1)
+a.columns = [f'{col}_{i+1}' for i in range(len(kmer_list)) for col in formatt.columns]
 
 
 
-for index,ff in enumerate([39,47,55,63,71,79,87,95]):
+for index,ff in enumerate(kmer_list):
     for i in range(3):
         if i == 0:
             temp = pd.read_csv("./abyss_outputs/k" + str(ff) + "-kc2/ecoli-scaffolds.fa_n50_stat",sep="\t", names=["value"])
@@ -45,7 +46,10 @@ legend_colors = ['red', 'green', 'blue']
 colors = ['red', 'green', 'blue','white']
 
 
-groups = ['k39', 'k47', 'k55', 'k63', 'k71','k79','k87','k95']
+groups = kmer_list
+for i in range(len(groups)):
+    groups[i] = "k" + str(groups[i])
+
 x_positions = [i * 4 for i in range(len(groups))]
 
 
@@ -58,7 +62,7 @@ for index, row in df.iterrows():
         if (i + 1) % 3 == 0:
             modified_list.append(0)  # Add 0 after every third element
     
-    plt.bar(np.arange(0,32,1), modified_list, color=colors * int(len(row)/4))
+    plt.bar(np.arange(0,len(kmer_list)*4,1), modified_list, color=colors * int(len(row)/4))
     plt.title(index)
     plt.xlabel('Columns')
     plt.ylabel('Values')
