@@ -104,10 +104,15 @@ chmod +x abyss_velvet_denovo_assembly.sh
 ### Analysis and Comparison
 
 In the analysis, we compare various output features of the assembled scaffolds from each kmer length. The features compared were Total assembled Sequences, Total assembled bases, N50, N90, L50, Average assembled contig length, Minimum contig length, Max Length, No. of N nucleotides.
-Furthermore, BUSCO analysis plots were made to access the completeness of the assembled genome.
 ```
 python data_analysis.py
 ```
+Furthermore, BUSCO analysis plots were made to access the completeness of the assembled genome. The plots are saved in the plots directory.
+```
+chmod +x busco_run.sh
+./busco_run.sh
+```
+
 
 ### Results
 
