@@ -38,7 +38,6 @@ The workflow consists of the following steps:
    ```bash
    conda create -n grover python=3.9
    conda activate grover
-   pip install -r requirements.txt
    ```
 
 2. Install Trimmomatic:
