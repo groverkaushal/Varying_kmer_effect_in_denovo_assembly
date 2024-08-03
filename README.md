@@ -38,6 +38,7 @@ The workflow consists of the following steps:
    ```bash
    conda create -n grover python=3.9
    conda activate grover
+   conda install matplotlib
    ```
 
 2. Install Trimmomatic:
@@ -69,8 +70,8 @@ The workflow consists of the following steps:
    wget https://github.com/dzerbino/velvet/archive/refs/tags/v1.2.10.tar.gz
    tar -xf v1.2.10.tar.gz
    cd velvet-1.2.10
-   make
-   cd ..
+   make 'MAXKMERLENGTH=155'
+   cd ../../
    ```
 
 6. Install Busco:
