@@ -116,7 +116,7 @@ chmod +x busco_run.sh
 
 ### Results
 
-The results from this study, including quality assessment grpahs and assembly outputs, are generated in the plots directory. We infer from the plots that kmer length of 87 had the most complete assembly for the given dataset.
+The results from this study, including quality assessment graphs and assembly outputs, are generated in the plots directory. For inference we consider the N50 and L50 statistics first. We then check for the total bases and the busco scores to access the completeness of the assembly. We use other statistics like N90, Max Length, Avg Length to confirm the assembly quality. We infer from the plots that kmer length of 95 had the most complete assembly for the given dataset.
 
 
 ---
